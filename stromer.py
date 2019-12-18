@@ -14,6 +14,7 @@ username = config['username']
 client_id = config['client_id']
 client_secret = config['client_secret']
 slack_api_token =  config['slack_api_token']
+slack_user = config['slack_user']
 
 slack = Slacker(slack_api_token)
 
@@ -95,4 +96,4 @@ current_speed = state['bike_speed']
 status_text = ':bicyclist: total: {} km, average {} km/h, battery: {} %, current: {} km/h :bicyclist:'.format(
     distance, average_speed, battery, current_speed)
 
-slack.users.profile.set(user='UDFFLV5U7', name='status_text', value=status_text)
+slack.users.profile.set(user=slack_user, name='status_text', value=status_text)
